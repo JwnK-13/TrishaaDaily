@@ -1,7 +1,78 @@
 
         body {
             box-sizing: border-box;
+                margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
         }
+
+/* Overlay pastel */
+#ny-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ffd6e8, #ffe4c4, #e8d7ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Canvas petasan */
+#ny-canvas {
+    position: absolute;
+    inset: 0;
+}
+
+/* Teks tengah */
+.ny-content {
+    position: relative;
+    text-align: center;
+    z-index: 5;
+    animation: floatIn 2s ease forwards;
+}
+
+.ny-content h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: #ff6fae;
+    text-shadow: 0 0 20px rgba(255, 111, 174, 0.6);
+    margin: 0;
+}
+
+.ny-content p {
+    margin-top: 10px;
+    color: #7a4c6a;
+    font-size: 1.2rem;
+}
+
+/* Tombol cute */
+.ny-btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #ff9fcf;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 159, 207, 0.4);
+    transition: 0.3s;
+}
+
+.ny-btn:hover {
+    transform: scale(1.1);
+    background: #ff7fbf;
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
         
         * {
             margin: 0;
@@ -845,6 +916,7 @@
                 grid-template-columns: 1fr;
             }
         }
+
 
 
 
