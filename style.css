@@ -606,7 +606,7 @@
         .live-dot {
             width: 12px;
             height: 12px;
-            background: #00ff00;
+            background: #808080;
             border-radius: 50%;
         }
 
@@ -916,6 +916,7 @@
                 grid-template-columns: 1fr;
             }
         }
+
 
 
 
