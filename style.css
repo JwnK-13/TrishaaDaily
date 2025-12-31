@@ -506,6 +506,23 @@
             margin-bottom: 2rem;
         }
 
+.live-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 24px;
+    background-color: #FF8DC7;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.live-button:hover {
+    background-color: #ff6fb6;
+    transform: scale(1.05);
+}
+
         .live-indicator {
             display: inline-flex;
             align-items: center;
@@ -523,7 +540,7 @@
         }
 
         .live-dot.active {
-            background: #FF4444;
+            background: #00ff00;
             animation: pulse 1.5s infinite;
         }
 
@@ -828,5 +845,6 @@
                 grid-template-columns: 1fr;
             }
         }
+
 
 
