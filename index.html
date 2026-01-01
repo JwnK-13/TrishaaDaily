@@ -18,12 +18,6 @@
 <div id="ny-overlay">
     <canvas id="ny-canvas"></canvas>
 
-    <div class="ny-content">
-        <h1>🎀 Selamat Tahun Baru 2026 🎀</h1>
-        <p>Semoga tahun ini penuh senyum & hal baik ✨</p>
-        <button class="ny-btn" onclick="closeNY()">Masuk Website</button>
-    </div>
-</div>
   
   <nav class="navbar"><a href="#" class="logo" id="logo-text">Fanmade Website</a>
    <ul class="nav-menu">
@@ -873,103 +867,13 @@ function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
-resize();
-window.addEventListener("resize", resize);
 
-class Firework {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = canvas.height;
-        this.targetY = Math.random() * canvas.height * 0.5;
-        this.speed = Math.random() * 2 + 3;
-        this.color = `hsl(${Math.random() * 40 + 300}, 100%, 75%)`;
-        this.exploded = false;
-        this.particles = [];
-    }
-
-    update() {
-        if (!this.exploded) {
-            this.y -= this.speed;
-            if (this.y <= this.targetY) {
-                this.exploded = true;
-                for (let i = 0; i < 40; i++) {
-                    this.particles.push(new Particle(this.x, this.y, this.color));
-                }
-            }
-        }
-    }
-
-    draw() {
-        if (!this.exploded) {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
-            ctx.fillStyle = this.color;
-            ctx.fill();
-        }
-    }
-}
-
-class Particle {
-    constructor(x, y, color) {
-        this.x = x;
-        this.y = y;
-        this.color = color;
-        this.radius = Math.random() * 2 + 1;
-        this.life = 80;
-        this.vx = (Math.random() - 0.5) * 4;
-        this.vy = (Math.random() - 0.5) * 4;
-    }
-
-    update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        this.life--;
-    }
-
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-    }
-}
-
-let fireworks = [];
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    if (Math.random() < 0.04) {
-        fireworks.push(new Firework());
-    }
-
-    fireworks.forEach((fw, i) => {
-        fw.update();
-        fw.draw();
-
-        fw.particles.forEach((p, pi) => {
-            p.update();
-            p.draw();
-            if (p.life <= 0) fw.particles.splice(pi, 1);
-        });
-
-        if (fw.exploded && fw.particles.length === 0) {
-            fireworks.splice(i, 1);
-        }
-    });
-
-    requestAnimationFrame(animate);
-}
-animate();
-
-function closeNY() {
-    document.getElementById("ny-overlay").style.display = "none";
-}
    
     </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b56d0d5c72bb5c9',t:'MTc2Njk4NTI4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
+
 
 
 
